@@ -5,6 +5,6 @@ RUN mvn clean package -DskipTests
 
 FROM openjdk:17-jdk-slim
 WORKDIR /app
-COPY --from=build /app/target/be-0.0.1-SNAPSHOT.jar be.jar
+COPY --from=build /app/target/be-0.0.1-SNAPSHOT.jar /app/be.jar
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","be.jar"]
